@@ -173,13 +173,11 @@ Write a clear, practical morning brief that covers:
 Keep it conversational and direct — this is read out loud to a field crew. No bullet walls, just clear sections. Around 350-450 words.`;
 
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": API_KEY,
-          "anthropic-version": "2023-06-01",
-          "anthropic-dangerous-direct-browser-calls": "true",
+          
         },
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
